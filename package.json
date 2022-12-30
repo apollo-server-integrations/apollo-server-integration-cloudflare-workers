@@ -1,0 +1,63 @@
+{
+  "name": "@as-integrations/cloudflare-workers",
+  "description": "An integration to use Cloudflare Workers as a hosting service with Apollo Server v4",
+  "version": "0.1.0",
+  "author": "Kim Nguyen Huu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apollo-server-integrations/apollo-server-integration-cloudflare-workers"
+  },
+  "homepage": "https://github.com/apollo-server-integrations/apollo-server-integration-cloudflare-workers#readme",
+  "bugs": {
+    "url": "https://github.com/apollo-server-integrations/apollo-server-integration-cloudflare-workers/issues"
+  },
+  "keywords": [
+    "graphql",
+    "apollo",
+    "server",
+    "cloudflare",
+    "workers",
+    "typescript"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=14.0"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "git clean -dfqX",
+    "install-with-npm-8.5": "npm i -g npm@^8.5.0 && npm i",
+    "prepack": "npm run build",
+    "prettier-check": "prettier --check .",
+    "prettier-fix": "prettier --write .",
+    "publish-changeset": "changeset publish",
+    "spell-check": "cspell lint '**' --no-progress || (echo 'Add any real words to cspell-dict.txt.'; exit 1)",
+    "test": "jest",
+    "test:ci": "jest --coverage --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
+    "watch": "tsc --build --watch"
+  },
+  "devDependencies": {
+    "@apollo/server-integration-testsuite": "^4.3.0",
+    "@changesets/changelog-github": "0.4.7",
+    "@changesets/cli": "2.25.2",
+    "@cloudflare/workers-types": "^4.20221111.1",
+    "@types/jest": "29.2.4",
+    "cspell": "6.17.0",
+    "jest": "29.3.1",
+    "jest-junit": "15.0.0",
+    "prettier": "2.8.1",
+    "ts-jest": "29.0.3",
+    "ts-node": "10.9.1",
+    "typescript": "4.9.4"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.2.0"
+  },
+  "peerDependencies": {
+    "@apollo/server": "^4.3.0",
+    "graphql": "^16.6.0"
+  }
+}
