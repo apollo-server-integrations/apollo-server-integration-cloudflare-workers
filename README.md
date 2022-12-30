@@ -1,4 +1,4 @@
-# apollo-server-integration-cloudflare-workers
+# @as-integrations/cloudflare-workers
 
 This is an Apollo Server v4 integration for Cloudflare Workers.
 
