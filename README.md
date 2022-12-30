@@ -1,11 +1,6 @@
 # @as-integrations/cloudflare-workers
 
-This is an Apollo Server v4 integration for Cloudflare Workers.
-
-## Demo
-
-- Source: https://github.com/kimyvgy/worker-apollo-server-template
-- Live demo: https://worker-apollo-server.webee-asia.workers.dev
+An integration to use Cloudflare Workers as a hosting service with Apollo Server.
 
 ## Install
 
@@ -70,3 +65,8 @@ addEventListener((e) => handleGraphQLRequest(e.request as Request));
 //   },
 // };
 ```
+
+## Demo
+
+- Source: https://github.com/kimyvgy/worker-apollo-server-template
+- Live demo: https://worker-apollo-server.webee-asia.workers.dev
