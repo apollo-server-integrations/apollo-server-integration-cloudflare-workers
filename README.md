@@ -1,5 +1,7 @@
 # @as-integrations/cloudflare-workers
 
+[![NPM version](https://img.shields.io/npm/v/@as-integrations/cloudflare-workers.svg)](https://www.npmjs.com/package/@as-integrations/cloudflare-workers)
+
 An integration to use Cloudflare Workers as a hosting service with Apollo Server.
 
 ## Install
