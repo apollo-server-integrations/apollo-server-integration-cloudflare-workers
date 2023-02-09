@@ -22,11 +22,15 @@ export function startServerAndCreateCloudflareWorkersHandler(
   server: ApolloServer<BaseContext>,
   options?: CloudflareWorkersHandlerOptions<BaseContext>,
 ): CloudflareWorkersHandler;
-export function startServerAndCreateCloudflareWorkersHandler<TContext extends BaseContext>(
+export function startServerAndCreateCloudflareWorkersHandler<
+  TContext extends BaseContext,
+>(
   server: ApolloServer<TContext>,
   options: WithRequired<CloudflareWorkersHandlerOptions<TContext>, 'context'>,
 ): CloudflareWorkersHandler;
-export function startServerAndCreateCloudflareWorkersHandler<TContext extends BaseContext>(
+export function startServerAndCreateCloudflareWorkersHandler<
+  TContext extends BaseContext,
+>(
   server: ApolloServer<TContext>,
   options?: CloudflareWorkersHandlerOptions<TContext>,
 ): CloudflareWorkersHandler {
@@ -69,10 +73,12 @@ export function startServerAndCreateCloudflareWorkersHandler<TContext extends Ba
     } catch (e) {
       return new Response((e as Error).message, { status: 400 });
     }
-  }
+  };
 }
 
-async function normalizeIncomingRequest(request: Request): Promise<HTTPGraphQLRequest> {
+async function normalizeIncomingRequest(
+  request: Request,
+): Promise<HTTPGraphQLRequest> {
   const headers = normalizeHeaders(request.headers);
   const url = new URL(request.url);
   const method = request.method.toUpperCase();
@@ -82,7 +88,7 @@ async function normalizeIncomingRequest(request: Request): Promise<HTTPGraphQLRe
     headers,
     body: method === 'GET' ? request.body : await request.json(),
     search: url.search ?? '',
-  }
+  };
 }
 
 function normalizeHeaders(headers: Headers): HeaderMap {
