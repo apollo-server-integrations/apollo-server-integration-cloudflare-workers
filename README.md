@@ -11,11 +11,11 @@ npm install @apollo/server graphql @as-integrations/cloudflare-workers
 ## Usage
 
 ```typescript
-import type { CloudflareWorkersHandler } from 'apollo-server-integration-cloudflare-workers';
+import type { CloudflareWorkersHandler } from '@as-integrations/cloudflare-workers';
 
 import { ApolloServer } from '@apollo/server';
+import { startServerAndCreateCloudflareWorkersHandler } from '@as-integrations/cloudflare-workers';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
-import { startServerAndCreateCloudflareWorkersHandler } from 'apollo-server-integration-cloudflare-workers';
 
 interface ApolloDataSources {
   pokemonAPI: PokemonAPI;
@@ -39,7 +39,7 @@ const server = new ApolloServer<ContextValue>({
   ],
 });
 
-const handleGraphQLRequest: CloudflareWorkersHandler = startServerAndCreateCloudflareHandler(server, {
+const handleGraphQLRequest: CloudflareWorkersHandler = startServerAndCreateCloudflareWorkersHandler(server, {
   context: async ({ request }) => {
     const token = request.headers.token || '';
     const cache = server.cache;
