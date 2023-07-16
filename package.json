@@ -44,7 +44,7 @@
     "@changesets/cli": "2.26.2",
     "@cloudflare/workers-types": "4.20230710.1",
     "@types/jest": "29.5.3",
-    "cspell": "6.31.1",
+    "cspell": "6.31.2",
     "jest": "29.6.1",
     "jest-junit": "15.0.0",
     "prettier": "2.8.8",
