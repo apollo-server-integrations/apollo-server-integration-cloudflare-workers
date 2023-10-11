@@ -71,4 +71,4 @@ addEventListener((e) => handleGraphQLRequest(e.request as Request));
 ## Demo
 
 - Source: https://github.com/kimyvgy/worker-apollo-server-template
-- Live demo: https://worker-apollo-server.webee-asia.workers.dev
+- Live demo: https://worker-apollo-server.ds101.workers.dev
