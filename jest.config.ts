@@ -1,15 +1,15 @@
 import type { Config } from '@jest/types';
 
+const testRegex = '/__tests__/.*.test.ts$';
+
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   roots: ['src'],
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.test.json',
-    },
+  transform: {
+    [testRegex]: ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },
-  testRegex: '/__tests__/.*.test.ts$',
+  testRegex,
   verbose: true,
 };
 
