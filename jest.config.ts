@@ -1,15 +1,20 @@
 import type { Config } from '@jest/types';
-
-const testRegex = '/__tests__/.*.test.ts$';
+import fetch, { Request, Headers, Response } from 'node-fetch';
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   roots: ['src'],
-  transform: {
-    [testRegex]: ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
+  globals: {
+    fetch,
+    Request,
+    Headers,
+    Response,
   },
-  testRegex,
+  transform: {
+    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
+  },
+  testRegex: '/__tests__/.*.test.ts$',
   verbose: true,
 };
 
