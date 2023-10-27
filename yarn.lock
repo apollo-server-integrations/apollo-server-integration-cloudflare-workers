@@ -62,31 +62,31 @@
     "@apollo/utils.keyvaluecache" "^2.1.0"
     "@apollo/utils.logger" "^2.0.0"
 
-"@apollo/server-integration-testsuite@4.9.4":
-  version "4.9.4"
-  resolved "https://registry.npmjs.org/@apollo/server-integration-testsuite/-/server-integration-testsuite-4.9.4.tgz"
-  integrity sha512-f8zCbErjCyBVdVu7/jXKe0eKW+Y5/HSz3D6r9sm/YGmb17egB871564xZhODET/9iL5IjN/OJQ3FlzyvPNdS6Q==
+"@apollo/server-integration-testsuite@4.9.5":
+  version "4.9.5"
+  resolved "https://registry.npmjs.org/@apollo/server-integration-testsuite/-/server-integration-testsuite-4.9.5.tgz"
+  integrity sha512-o+b6SkEcxZYSRVEa1C0IAaU5G7YiSiSSLLTmuStAlyO/1PHaq2FGD0xRBvj9q+dNdU3SaC6Y5RdeVwsHg2/iVg==
   dependencies:
     "@apollo/cache-control-types" "^1.0.3"
     "@apollo/client" "^3.6.9"
-    "@apollo/server" "4.9.4"
+    "@apollo/server" "4.9.5"
     "@apollo/usage-reporting-protobuf" "^4.1.1"
     "@apollo/utils.createhash" "^2.0.0"
     "@apollo/utils.keyvaluecache" "^2.1.0"
     "@josephg/resolvable" "^1.0.1"
     body-parser "^1.20.0"
     express "^4.18.1"
-    graphql-http "1.21.0"
+    graphql-http "1.22.0"
     graphql-tag "^2.12.6"
     loglevel "^1.8.0"
     node-fetch "^2.6.7"
     superagent "^8.0.9"
     supertest "^6.2.3"
 
-"@apollo/server@4.9.4":
-  version "4.9.4"
-  resolved "https://registry.npmjs.org/@apollo/server/-/server-4.9.4.tgz"
-  integrity sha512-lopNDM3sZerTcYH/P85QX5HqSNV4HoVbtX3zOrf0ak7eplhPDiGVyF0jQWRbL64znG6KXW+nMuLDTyFTMQnvgA==
+"@apollo/server@4.9.5":
+  version "4.9.5"
+  resolved "https://registry.npmjs.org/@apollo/server/-/server-4.9.5.tgz"
+  integrity sha512-eDBfArYbZaTm1AGa82M1aL7lOscVhnZsH85+OWmHMIR98qntzEjNpWpQPYDTru63Qxs4kHcY29NUx/kMGZfGEA==
   dependencies:
     "@apollo/cache-control-types" "^1.0.3"
     "@apollo/server-gateway-interface" "^1.1.1"
@@ -709,10 +709,10 @@
     human-id "^1.0.2"
     prettier "^2.7.1"
 
-"@cloudflare/workers-types@4.20231016.0":
-  version "4.20231016.0"
-  resolved "https://registry.npmjs.org/@cloudflare/workers-types/-/workers-types-4.20231016.0.tgz"
-  integrity sha512-eGB0cRVyoJpeyGJx2re5sbd9R316a61sY73xwnqm4cwGpb+OxCK2gc651RxGiN7H4w6LY1RpysUgeGLmj5B3+g==
+"@cloudflare/workers-types@4.20231025.0":
+  version "4.20231025.0"
+  resolved "https://registry.npmjs.org/@cloudflare/workers-types/-/workers-types-4.20231025.0.tgz"
+  integrity sha512-TkcZkntUTOcvJ4vgmwpNfLTclpMbmbClZCe62B25/VTukmyv91joRa4eKzSjzCZUXTbFHNmVdOpmGaaJU2U3+A==
 
 "@cspell/cspell-bundled-dicts@7.3.8":
   version "7.3.8"
@@ -3021,10 +3021,10 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
-graphql-http@1.21.0:
-  version "1.21.0"
-  resolved "https://registry.npmjs.org/graphql-http/-/graphql-http-1.21.0.tgz"
-  integrity sha512-yrItPfHj5WeT4n7iusbVin+vGSQjXFAX6U/GnYytdCJRXVad1TWGtYFDZ2ROjCKpXQzIwvfbiWCEwfuXgR3B6A==
+graphql-http@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.npmjs.org/graphql-http/-/graphql-http-1.22.0.tgz"
+  integrity sha512-9RBUlGJWBFqz9LwfpmAbjJL/8j/HCNkZwPBU5+Bfmwez+1Ay43DocMNQYpIWsWqH0Ftv6PTNAh2aRnnMCBJgLw==
 
 graphql-tag@^2.12.6:
   version "2.12.6"
