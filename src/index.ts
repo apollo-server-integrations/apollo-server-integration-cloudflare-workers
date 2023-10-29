@@ -1,4 +1,5 @@
 import type { WithRequired } from '@apollo/utils.withrequired';
+import type { ExecutionContext } from '@cloudflare/workers-types';
 
 import {
   ApolloServer,
@@ -8,45 +9,66 @@ import {
   HTTPGraphQLRequest,
 } from '@apollo/server';
 
-export type CloudflareWorkersHandler = (request: Request) => Promise<Response>;
+export type CloudflareWorkersHandler<TEnv> = (
+  request: Request,
+  env: TEnv,
+  ctx: ExecutionContext,
+) => Promise<Response>;
 
-export interface CloudflareContextFunctionArgument {
+export interface CloudflareContextFunctionArgument<TEnv> {
   request: Request;
+  env: TEnv;
+  ctx: ExecutionContext;
 }
 
-export interface CloudflareWorkersHandlerOptions<TContext extends BaseContext> {
-  context?: ContextFunction<[CloudflareContextFunctionArgument], TContext>;
+export interface CloudflareWorkersHandlerOptions<
+  TEnv,
+  TContext extends BaseContext,
+> {
+  context?: ContextFunction<
+    [CloudflareContextFunctionArgument<TEnv>],
+    TContext
+  >;
 }
 
-export function startServerAndCreateCloudflareWorkersHandler(
+export function startServerAndCreateCloudflareWorkersHandler<TEnv>(
   server: ApolloServer<BaseContext>,
-  options?: CloudflareWorkersHandlerOptions<BaseContext>,
-): CloudflareWorkersHandler;
+  options?: CloudflareWorkersHandlerOptions<TEnv, BaseContext>,
+): CloudflareWorkersHandler<TEnv>;
 export function startServerAndCreateCloudflareWorkersHandler<
+  TEnv,
   TContext extends BaseContext,
 >(
   server: ApolloServer<TContext>,
-  options: WithRequired<CloudflareWorkersHandlerOptions<TContext>, 'context'>,
-): CloudflareWorkersHandler;
+  options: WithRequired<
+    CloudflareWorkersHandlerOptions<TEnv, TContext>,
+    'context'
+  >,
+): CloudflareWorkersHandler<TEnv>;
 export function startServerAndCreateCloudflareWorkersHandler<
+  TEnv,
   TContext extends BaseContext,
 >(
   server: ApolloServer<TContext>,
-  options?: CloudflareWorkersHandlerOptions<TContext>,
-): CloudflareWorkersHandler {
+  options?: CloudflareWorkersHandlerOptions<TEnv, TContext>,
+): CloudflareWorkersHandler<TEnv> {
   server.startInBackgroundHandlingStartupErrorsByLoggingAndFailingAllRequests();
 
   const defaultContext: ContextFunction<
-    [CloudflareContextFunctionArgument],
+    [CloudflareContextFunctionArgument<TEnv>],
     any
   > = async () => ({});
 
   const contextFunction: ContextFunction<
-    [CloudflareContextFunctionArgument],
+    [CloudflareContextFunctionArgument<TEnv>],
     TContext
   > = options?.context ?? defaultContext;
 
-  return async (request: Request) => {
+  return async function cloudflareWorkersHandler(
+    request: Request,
+    env: TEnv,
+    ctx: ExecutionContext,
+  ) {
     try {
       if (request.method === 'OPTIONS') {
         return new Response('', { status: 204 });
@@ -56,7 +78,7 @@ export function startServerAndCreateCloudflareWorkersHandler<
 
       const { body, headers, status } = await server.executeHTTPGraphQLRequest({
         httpGraphQLRequest: httpGraphQLRequest,
-        context: () => contextFunction({ request }),
+        context: () => contextFunction({ request, env, ctx }),
       });
 
       if (body.kind === 'chunked') {
