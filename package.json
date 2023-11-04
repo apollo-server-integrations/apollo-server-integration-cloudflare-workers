@@ -54,7 +54,7 @@
   },
   "volta": {
     "node": "18.18.2",
-    "npm": "10.2.1"
+    "npm": "10.2.3"
   },
   "peerDependencies": {
     "@apollo/server": "^4.3.0",
