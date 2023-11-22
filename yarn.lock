@@ -709,9 +709,9 @@
     human-id "^1.0.2"
     prettier "^2.7.1"
 
-"@cloudflare/workers-types@4.20231025.0":
+"@cloudflare/workers-types@^4.20231025.0":
   version "4.20231025.0"
-  resolved "https://registry.npmjs.org/@cloudflare/workers-types/-/workers-types-4.20231025.0.tgz"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-4.20231025.0.tgz#ac4d7e6a346670774a7d36cce1444786607f8dfe"
   integrity sha512-TkcZkntUTOcvJ4vgmwpNfLTclpMbmbClZCe62B25/VTukmyv91joRa4eKzSjzCZUXTbFHNmVdOpmGaaJU2U3+A==
 
 "@cspell/cspell-bundled-dicts@8.0.0":

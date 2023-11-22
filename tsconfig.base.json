@@ -18,11 +18,20 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["ESNext", "DOM", "esnext.asynciterable"],
-    "types": ["node"],
+    "lib": [
+      "ESNext",
+      "DOM",
+      "esnext.asynciterable"
+    ],
+    "types": [
+      "node",
+      "@cloudflare/workers-types"
+    ],
     "baseUrl": ".",
     "paths": {
-      "*" : ["types/*"]
+      "*": [
+        "types/*"
+      ]
     }
   }
 }
