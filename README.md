@@ -4,6 +4,11 @@
 
 An integration to use Cloudflare Workers as a hosting service with Apollo Server.
 
+## Quickstart
+
+- Checkout the repository template: https://github.com/kimyvgy/worker-apollo-server-template
+- Live demo: https://worker-apollo-server.ds101.workers.dev
+
 ## Install
 
 ```bash
@@ -62,8 +67,3 @@ export default {
   }),
 };
 ```
-
-## Demo
-
-- Source: https://github.com/kimyvgy/worker-apollo-server-template
-- Live demo: https://worker-apollo-server.ds101.workers.dev
