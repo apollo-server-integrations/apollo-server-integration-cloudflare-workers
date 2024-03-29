@@ -37,6 +37,10 @@ const resolvers = {
   }
 }
 
+interface Context {
+  token: string
+}
+
 const server = new ApolloServer<Context>({
   typeDefs,
   resolvers,
