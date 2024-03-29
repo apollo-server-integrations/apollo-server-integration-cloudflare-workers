@@ -7,65 +7,56 @@ An integration to use Cloudflare Workers as a hosting service with Apollo Server
 ## Install
 
 ```bash
-npm install @apollo/server graphql @as-integrations/cloudflare-workers
+npm add @apollo/server @as-integrations/cloudflare-workers graphql
 ```
 
 ## Usage
 
-```typescript
-import type { CloudflareWorkersHandler } from '@as-integrations/cloudflare-workers';
+You must enable Node.js compatibility feature by adding the following flag in the file `wrangler.toml`:
 
+```toml
+node_compat = true  # add this
+```
+
+```typescript
 import { ApolloServer } from '@apollo/server';
 import { startServerAndCreateCloudflareWorkersHandler } from '@as-integrations/cloudflare-workers';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 
-interface ApolloDataSources {
-  pokemonAPI: PokemonAPI;
+const typeDefs = `#graphql
+  type Query {
+    example: String!
+  }
+`;
+
+const resolvers = {
+  Query: {
+    example: () => {
+      return 'Hello universe!';
+    },
+  }
 }
 
-interface ContextValue {
-  token: string;
-  dataSources: ApolloDataSources;
-};
-
-const server = new ApolloServer<ContextValue>({
+const server = new ApolloServer<Context>({
   typeDefs,
   resolvers,
   introspection: true,
   plugins: [
     ApolloServerPluginLandingPageLocalDefault({ footer: false }),
-    // ApolloServerPluginLandingPageProductionDefault({
-    //   graphRef: 'my-graph-id@my-graph-variant',
-    //   footer: false,
-    // })
   ],
 });
 
-const handleGraphQLRequest: CloudflareWorkersHandler = startServerAndCreateCloudflareWorkersHandler(server, {
-  context: async ({ request }) => {
-    const token = request.headers.token || '';
-    const cache = server.cache;
+export interface Env {
+  // ...
+}
 
-    const dataSources: ApolloDataSources = {
-      pokemonAPI: new PokemonAPI({ cache, token }),
-    };
-
-    return { dataSources, token };
-  },
-});
-
-// 1. ServiceWorker syntax:
-// --------------------------------------------------------------------
-addEventListener((e) => handleGraphQLRequest(e.request as Request));
-// --------------------------------------------------------------------
-
-// 2. Or ModuleWorker syntax:
-// --------------------------------------------------------------------
-// export default {
-//   fetch(request) {
-//     return handleGraphQLRequest(request);
-//   },
-// };
+export default {
+  fetch: startServerAndCreateCloudflareWorkersHandler<Env, Context>(server, {
+    context: async ({ env, request, ctx }) => {
+      return { token: 'secret' };
+    },
+  }),
+};
 ```
 
 ## Demo

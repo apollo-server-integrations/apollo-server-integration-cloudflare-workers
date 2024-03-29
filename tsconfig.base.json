@@ -18,11 +18,19 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["ESNext", "DOM", "esnext.asynciterable"],
-    "types": ["node"],
+    "lib": [
+      "ESNext",
+      "DOM",
+      "esnext.asynciterable"
+    ],
+    "types": [
+      "node"
+    ],
     "baseUrl": ".",
     "paths": {
-      "*" : ["types/*"]
+      "*": [
+        "types/*"
+      ]
     }
   }
 }

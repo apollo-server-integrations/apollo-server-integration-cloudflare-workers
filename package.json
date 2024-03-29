@@ -1,7 +1,7 @@
 {
   "name": "@as-integrations/cloudflare-workers",
   "description": "An integration to use Cloudflare Workers as a hosting service with Apollo Server v4",
-  "version": "0.2.0",
+  "version": "1.0.0-alpha",
   "author": "Kim Nguyen Huu",
   "license": "MIT",
   "repository": {
