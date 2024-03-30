@@ -42,9 +42,9 @@
     "@apollo/server-integration-testsuite": "4.10.2",
     "@changesets/changelog-github": "0.5.0",
     "@changesets/cli": "2.27.1",
-    "@cloudflare/workers-types": "4.20240320.1",
+    "@cloudflare/workers-types": "4.20240329.0",
     "@types/jest": "29.5.12",
-    "cspell": "8.6.0",
+    "cspell": "8.6.1",
     "jest": "29.7.0",
     "jest-junit": "16.0.0",
     "prettier": "3.2.5",
@@ -53,7 +53,7 @@
     "typescript": "5.4.3"
   },
   "volta": {
-    "node": "20.11.1",
+    "node": "20.12.0",
     "npm": "10.5.0"
   },
   "peerDependencies": {
