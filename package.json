@@ -44,7 +44,7 @@
     "@changesets/cli": "2.27.1",
     "@cloudflare/workers-types": "4.20240502.0",
     "@types/jest": "29.5.12",
-    "cspell": "8.8.0",
+    "cspell": "8.8.1",
     "jest": "29.7.0",
     "jest-junit": "16.0.0",
     "prettier": "3.2.5",
@@ -53,7 +53,7 @@
     "typescript": "5.4.5"
   },
   "volta": {
-    "node": "20.12.2",
+    "node": "20.13.1",
     "npm": "10.7.0"
   },
   "peerDependencies": {
