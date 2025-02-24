@@ -8,7 +8,6 @@ on:
 jobs:
   # Publish a new package to NPM:
   publish-npm:
-    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
