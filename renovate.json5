@@ -5,8 +5,8 @@
     "group:jestPlusTSJest",
     "group:jestPlusTypes",
     // Our default configuration. See
-    // https://github.com/apollographql/renovate-config-apollo-open-source/blob/master/package.json
-    "apollo-open-source",
+    // https://github.com/apollographql/renovate-config-apollo-open-source/blob/master/default.json5
+    "github>apollographql/renovate-config-apollo-open-source:default.json5",
   ],
   "packageRules": [
     // We set this to the lowest supported Node.js version to ensure we don't
