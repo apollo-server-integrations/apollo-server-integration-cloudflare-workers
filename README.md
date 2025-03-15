@@ -69,3 +69,24 @@ export default {
   }),
 };
 ```
+
+## Additional bonus Deno support
+
+- The above example can be run with `deno serve`
+### How?
+This integration is compatible with [Deno runtime](https://deno.com/). The reason is because Deno implements Web API standards and so [default `fetch` export for serving http requests](https://docs.deno.com/api/deno/~/Deno.ServeDefaultExport). And this is exactly what this repository provide for integration. So example above can be successfully run without any changes _(don't forget to add imports map to `deno.json` or add `npm:` prefix to imports)_.
+- Live demo (with code in place): https://dash.deno.com/playground/apollo-integration-example
+- For case when the more control is required you can rewrite it to something like this
+```ts
+// ...
+
+const handler = startServerAndCreateCloudflareWorkersHandler<Env, Context>(server, {
+  context: async ({ env, request, ctx }) => {
+    return { token: 'secret' };
+  },
+});
+
+Deno.serve({ port: 3000 }, (req) => {
+  return handler(req, {} satisfies Env, { secret: '' } satisfies Context);
+});
+```
