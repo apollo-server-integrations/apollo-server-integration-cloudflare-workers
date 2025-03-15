@@ -8,7 +8,7 @@ An integration to use Cloudflare Workers as a hosting service with Apollo Server
 
 - Read the step-by-step tutorial: https://viblo.asia/p/y37Ldv3y4ov
 - Checkout the repository template: https://github.com/kimyvgy/worker-apollo-server-template
-- Live demo: https://worker-apollo-server.ds101.workers.dev
+- Live demo: https://worker-apollo-server.teguru.workers.dev
 
 ## Install
 
