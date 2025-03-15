@@ -21,7 +21,8 @@ npm add @apollo/server @as-integrations/cloudflare-workers graphql
 You must enable Node.js compatibility feature by adding the following flag in the file `wrangler.toml`:
 
 ```toml
-node_compat = true  # add this
+compatibility_flags = ["nodejs_compat"] # wrangler v4
+# node_compat = true  # or wrangler v3
 ```
 
 ```typescript
