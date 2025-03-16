@@ -70,7 +70,13 @@ export default {
 };
 ```
 
-### Additional Bonus: Deno Support
+## Additional Bonus
+
+### Cloudflare Boilerplate
+
+If you are seeking an alternative boilerplate, Cloudflare offers an official implementation. Refer to [workers-graphql-server](https://github.com/cloudflare/workers-graphql).
+
+### Deno Support
 
 This example works with [Deno](https://deno.com) because it follows Web API standards and supports [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). With Deno’s built-in [Deno.serve](https://docs.deno.com/api/deno/~/Deno.serve), you can run it with minimal changes.
 
