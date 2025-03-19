@@ -70,23 +70,35 @@ export default {
 };
 ```
 
-## Additional bonus Deno support
+## Additional Bonus
 
-- The above example can be run with `deno serve`
-### How?
-This integration is compatible with [Deno runtime](https://deno.com/). The reason is because Deno implements Web API standards and so [default `fetch` export for serving http requests](https://docs.deno.com/api/deno/~/Deno.ServeDefaultExport). And this is exactly what this repository provide for integration. So example above can be successfully run without any changes _(don't forget to add imports map to `deno.json` or add `npm:` prefix to imports)_.
-- Live demo (with code in place): https://dash.deno.com/playground/apollo-integration-example
-- For case when the more control is required you can rewrite it to something like this
-```ts
-// ...
+### Cloudflare Boilerplate
+
+If you’re looking for an alternative boilerplate, Cloudflare offers an official implementation built with [Hono](https://github.com/honojs/hono). You can explore it at [cloudflare/workers-graphql-server](https://github.com/cloudflare/workers-graphql-server).
+
+### Deno Support
+
+This example works with [Deno](https://deno.com) because it follows Web API standards and supports [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). With Deno’s built-in [Deno.serve](https://docs.deno.com/api/deno/~/Deno.serve), you can run it with minimal changes.
+
+**Important Notes:**
+
+- If using Node.js packages, add an import map to `deno.json` or use the `npm:` prefix.
+```typescript
+# instead of:
+import { ApolloServer } from '@apollo/server';
+
+# we use:
+import { ApolloServer } from 'npm:@apollo/server';
+```
+- For more control, modify the setup:
+```typescript
+type Env = {};
+type Context = { token: string };
 
 const handler = startServerAndCreateCloudflareWorkersHandler<Env, Context>(server, {
-  context: async ({ env, request, ctx }) => {
-    return { token: 'secret' };
-  },
+  context: async () => ({ token: 'secret' }),
 });
 
-Deno.serve({ port: 3000 }, (req) => {
-  return handler(req, {} satisfies Env, { secret: '' } satisfies Context);
-});
+Deno.serve({ port: 3000 }, (req) => handler(req, {} satisfies Env, { token: '' } satisfies Context));
 ```
+- Live demo: [Deno Playground](https://dash.deno.com/playground/apollo-integration-example)
