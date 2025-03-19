@@ -74,7 +74,7 @@ export default {
 
 ### Cloudflare Boilerplate
 
-If you’re looking for an alternative boilerplate, Cloudflare offers an official implementation built with [Hono](https://github.com/honojs/hono). You can explore it at [workers-graphql-server](https://github.com/cloudflare/workers-graphql-server).
+If you’re looking for an alternative boilerplate, Cloudflare offers an official implementation built with [Hono](https://github.com/honojs/hono). You can explore it at [cloudflare/workers-graphql-server](https://github.com/cloudflare/workers-graphql-server).
 
 ### Deno Support
 
