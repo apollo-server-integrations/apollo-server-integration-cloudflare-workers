@@ -41,7 +41,7 @@
     "@apollo/server-integration-testsuite": "4.12.0",
     "@changesets/changelog-github": "0.5.1",
     "@changesets/cli": "2.29.2",
-    "@cloudflare/workers-types": "4.20250504.0",
+    "@cloudflare/workers-types": "4.20250505.0",
     "@types/jest": "29.5.14",
     "@types/node": "18.19.87",
     "cspell": "8.19.4",
