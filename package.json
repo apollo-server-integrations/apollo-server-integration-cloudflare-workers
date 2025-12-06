@@ -53,7 +53,7 @@
     "typescript": "5.9.3"
   },
   "volta": {
-    "node": "22.21.1",
+    "node": "24.11.1",
     "npm": "11.6.4"
   },
   "peerDependencies": {
