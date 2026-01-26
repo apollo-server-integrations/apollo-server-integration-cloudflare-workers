@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apollo-server-integrations/apollo-server-integration-cloudflare-workers"
+    "url": "git+https://github.com/apollo-server-integrations/apollo-server-integration-cloudflare-workers.git"
   },
   "homepage": "https://github.com/apollo-server-integrations/apollo-server-integration-cloudflare-workers#readme",
   "bugs": {
