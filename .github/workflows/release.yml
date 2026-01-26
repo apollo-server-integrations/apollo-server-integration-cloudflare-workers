@@ -9,6 +9,10 @@ jobs:
   # Publish a new package to NPM:
   publish-npm:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -18,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 24.x
       - name: Install Dependencies
         run: npm install
       - name: Create Release Pull Request / NPM Publish
@@ -27,7 +31,7 @@ jobs:
           publish: npm run publish-changeset
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ""
 
   # Create a new tag release on GitHub:
   create-release:
