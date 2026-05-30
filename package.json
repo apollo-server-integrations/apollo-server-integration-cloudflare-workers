@@ -41,7 +41,7 @@
     "@apollo/server-integration-testsuite": "4.13.0",
     "@changesets/changelog-github": "0.7.0",
     "@changesets/cli": "2.31.0",
-    "@cloudflare/workers-types": "4.20260524.1",
+    "@cloudflare/workers-types": "4.20260530.1",
     "@types/jest": "29.5.14",
     "@types/node": "18.19.130",
     "cspell": "8.19.4",
@@ -54,7 +54,7 @@
   },
   "volta": {
     "node": "22.22.3",
-    "npm": "11.15.0"
+    "npm": "11.16.0"
   },
   "peerDependencies": {
     "@apollo/server": "^4.3.0",
